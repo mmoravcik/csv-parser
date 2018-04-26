@@ -3,9 +3,8 @@ import re
 
 
 # Regular expression which matches the possible day range,
-# for example `mon-tue` or `wed-fri`. We still need to check the correct
-# order of days later, e.g. tue-mon should not be valid
-RANGE_REGEX = '([mon|tue|wed|thu|fri]{3})-([mon|tue|wed|thu|fri]{3})'
+# for example `mon-tue` or `wed-fri`.
+RANGE_REGEX = '\\b(mon|tue|wed|thu|fri)\\b-\\b(mon|tue|wed|thu|fri)\\b'
 
 
 class CSVParser:
