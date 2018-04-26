@@ -7,16 +7,16 @@ from csv_parser import CSVParser
 def test_get_day_header_mapping():
     # Lets try with various 'malicious' data to make sure we end up
     # with a correct mapping
-    row = [
-        'mon',
-        'wed',
-        '^&*--&%$',
-        'random',
-        'monday-thursday',
-        'nom-dew',
-        'thu-fri',
-        'fri-mon',
-    ]
+    row_data = {
+        'mon': 'foo',
+        'wed': 'foo',
+        '^&*--&%$': 'foo',
+        'random': 'foo',
+        'monday-thursday': 'foo',
+        'nom-dew': 'foo',
+        'thu-fri': 'foo',
+        'fri-mon': 'foo',
+    }
     csv_parser = CSVParser(StringIO())
 
     expected = {
@@ -26,7 +26,7 @@ def test_get_day_header_mapping():
         'fri': 'thu-fri',
     }
 
-    assert csv_parser._get_day_header_mapping(row) == expected
+    assert csv_parser._get_day_header_mapping(row_data) == expected
 
 
 def test_parse_only_days_we_provide_and_in_day_order():
