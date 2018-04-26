@@ -11,8 +11,8 @@ RANGE_REGEX = '([mon|tue|wed|thu|fri]{3})-([mon|tue|wed|thu|fri]{3})'
 class CSVParser:
     week_days = ('mon', 'tue', 'wed', 'thu', 'fri')
 
-    def __init__(self, csv_path):
-        self.file = open(csv_path, 'r')
+    def __init__(self, csv_file):
+        self.file = csv_file
 
     def _get_day_header_mapping(self, row):
         day_header_mapping = {}
@@ -63,5 +63,4 @@ class CSVParser:
             for day in self.week_days:
                 result.append(self._get_day_data(day, row, day_header_mapping))
 
-        self.file.close()
         return result
