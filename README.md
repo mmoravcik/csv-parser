@@ -1,18 +1,21 @@
 # CSV Parser
 
-## Instalation
-1. Create new virtual env:
+## Installation
+1. Clone the repository and cd into the `csv-parser` folder
+2. Create new virtual env (python 2.7):
 `mkvirtualenv csv-parser`
-2. Activate it: `workon csv-parser`
-3. Install dependencies: `pip install -r requirements.txt`
+3. Activate it: `workon csv-parser`
+4. Install dependencies: `pip install -r requirements.txt`
 
 ## Running
-1. Activate virtual env: `workon csv-parser`
-2. Run it: `python parser.py`
+1. cd into `csv-parser` folder
+2. Activate virtual env: `workon csv-parser`
+3. Run it: `python parser.py`
 
 ## Tests
-1. Activate virtual env: `workon csv-parser`
-2. Run: `pytest`
+1. cd into `csv-parser` folder
+2. Activate virtual env: `workon csv-parser`
+3. Run: `pytest`
 
 
 ## About
@@ -50,3 +53,11 @@ Example output:
  {'day': 'wed', 'description': 'third_desc 4', 'square': 4, 'value': 2},
  {'day': 'thu', 'description': 'third_desc 4', 'double': 4, 'value': 2},
  {'day': 'fri', 'description': 'third_desc 2', 'double': 2, 'value': 1}]
+
+
+### Assumptions
+
+We assume that the source CSV will only have a 1 row of data and the day value 
+is always a number.
+Supported day headers are `mon`, `tue`, `wed`, `thu`, `fri`
+Date range is supported only via `<day_header>-<day_header>` format
